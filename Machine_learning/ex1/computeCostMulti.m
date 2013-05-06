@@ -12,9 +12,13 @@ J = 0;
 % ====================== YOUR CODE HERE ======================
 % Instructions: Compute the cost of a particular choice of theta
 %               You should set J to the cost.
-
-
-
+%[X_new,mu,sig]=featureNormalize(X);
+%predication=X*theta;
+%sqrError=(predication-y).^2;
+%J=1/(2*m)*sum(sqrError);
+J=1/(2*m)*(X*theta-y)'*(X*theta-y);
+%fprintf(' %f \n',theta);
+%fprintf('\n the_here \n');
 
 
 % =========================================================================

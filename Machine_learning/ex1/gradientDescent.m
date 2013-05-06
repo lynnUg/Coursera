@@ -18,11 +18,10 @@ for iter = 1:num_iters
     %       of the cost function (computeCost) and gradient here.
     %
     predication=X*theta;
-    Errors=(predication-y);
-    x_1=X*[0;1];
-    %Z=dot(Errors,x_1);
-    theta(1)=theta(1)- alpha*(1/m*sum(Errors));
-    theta(2)=theta(2)- alpha*(1/m*sum(Errors.*x_1));
+    errors=predication-y;
+    for z= 1:length(theta)
+    theta(z)=theta(z)- alpha*(1/m*sum(errors.*X(:,z)));
+    end
     %fprintf('Theta hello ');
     % fprintf('%f %f \n', theta(1), theta(2));
 

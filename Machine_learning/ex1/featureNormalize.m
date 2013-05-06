@@ -26,10 +26,9 @@ sigma = zeros(1, size(X, 2));
 % Hint: You might find the 'mean' and 'std' functions useful.
 %       
 
-     mu=mean(X);
-     sigma=std(X);
-     X_norm(:,1)=(X_norm(:,1)-mu(1))/sigma(1);
-     X_norm(:,2)=(X_norm(:,2)-mu(2))/sigma(2);
+  mu=mean(X);
+  sigma=std(X);
+  X_norm = studentize(X);
 
 
 

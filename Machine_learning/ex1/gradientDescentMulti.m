@@ -16,23 +16,19 @@ for iter = 1:num_iters
     % Hint: While debugging, it can be useful to print out the values
     %       of the cost function (computeCostMulti) and gradient here.
     %
-    X_norm=X;
-    mu=mean(X);
-    sigma=std(X);
-    for iter2 = 2:columns(X_norm)
-    X_norm(:,iter2)=(X_norm(:,iter2)-mu(iter2))/sigma(iter2);
-    end
-    predication=X_norm*theta;
+    
+    predication=X*theta;
     errors=predication-y;
     for z= 1:length(theta)
-    theta(z)=theta(z)- alpha*1/m*sum(errors.*X_norm(:,z));
+    theta(z)=theta(z)- alpha*(1/m*sum(errors.*X(:,z)));
     end
-    
+    %fprintf(' %f \n', theta);
+    %fprintf(' \n');
     % ============================================================
 
     % Save the cost J in every iteration    
     J_history(iter) = computeCostMulti(X, y, theta);
 
 end
-
+   
 end
