@@ -1,0 +1,7 @@
+6
+create view other   ...> as   ...> select docid,term,count from (select docid,term ,count from Frequency where term='washington' union select docid , term ,count from Frequency where term= 'treasury' union select docid , term ,count from Frequency where term= 'taxes') group by docid having count(term)=3
+
+create view other2   ...> as   ...> select docid,term,count from (select docid,term ,count from Frequency where term='washington' union select docid , term ,count from Frequency where term= 'treasury' union select docid , term ,count from Frequency where term= 'taxes');
+
+select * from other2  where docid='1711_txt_crude';
+select * from other2 where docid='16214_txt_interest'

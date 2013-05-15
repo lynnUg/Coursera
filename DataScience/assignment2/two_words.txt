@@ -1,0 +1,3 @@
+3
+select count(*)  from(select docid,term from Frequency where term='transactions' union select docid,term from Frequency where term='world') group by docid having count (term)=2;
+

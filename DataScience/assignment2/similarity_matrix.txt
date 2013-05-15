@@ -1,0 +1,18 @@
+19
+create view vector1 
+   ...> as 
+   ...> select term ,count 
+   ...> from Frequency
+   ...> where docid='10080_txt_crude'
+   ...> ;
+create view vector2
+   ...> as
+   ...> select term ,count
+   ...> from Frequency
+   ...> where docid='17035_txt_earn'
+   ...> ;
+select sum(vector2.count*vector1.count)
+   ...> from vector2,vector1
+   ...> where vector1.term=vector2.term
+   ...> ;
+
