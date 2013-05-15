@@ -8,13 +8,13 @@ def gradientDescent(X,y,theta,alpha,num_iters):
         error=(hypo-y)
         theta=theta-alpha*(1/float(m))* ( X.conj().transpose()*error)
         J_history[iter]=computeCost(X,y,theta)
-    print J_history
+        #print J_history
 def computeCost(X,y,theta):
     m=np.size(y)
     hypo=X*theta
     error=np.square(hypo-y)
     J=1/float(2*m)*np.sum(error)
-    print J
+    #print J
     
 def main() :
     txt_file_object=csv.reader(open('ex1data1.txt','rb'))
